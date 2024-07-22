@@ -1,0 +1,24 @@
+.posts {
+  padding-top: 64px;
+  &__title {
+    padding-bottom: 25px;
+  }
+  &__link {
+    display: inline-block;
+    background-color: #f5f5f7;
+    color: #7247ca;
+    padding: 6px 15px;
+    border-radius: 4px;
+    margin-top: 40px;
+  }
+  &__link::after {
+    content: "";
+    border: solid #7247ca;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin-left: 5px;
+  }
+}

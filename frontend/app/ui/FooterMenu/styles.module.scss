@@ -1,0 +1,9 @@
+.footerMenu {
+  &__list {
+  }
+  &__list {
+  }
+  &__item:not(:last-child) {
+    padding-bottom: 9px;
+  }
+}

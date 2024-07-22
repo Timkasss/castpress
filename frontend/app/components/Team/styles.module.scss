@@ -1,0 +1,13 @@
+.team {
+  padding-top: 64px;
+  &__title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #222222;
+    padding-bottom: 25px;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
