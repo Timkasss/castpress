@@ -124,7 +124,7 @@ const Article: React.FC<numberType> = ({ number }) => {
               <IoVolumeMedium
                 className={styles.article__volumeIcon}
                 onMouseEnter={() => setHoverVolume(true)}
-                onMouseDown={() => setHoverVolume(false)}
+                onMouseDown={() => setHoverVolume(false)8552}
               />
               {hoverVolume && (
                 <input
