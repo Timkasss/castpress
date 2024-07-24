@@ -1,0 +1,86 @@
+.audio {
+  &__audio {
+    display: none;
+  }
+  &__audioPlaing {
+    color: #222222;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .audio__volumeWrapper {
+      position: relative;
+      .audio__volumeIcon {
+        width: 16px;
+        height: 14px;
+        cursor: pointer;
+        margin-right: 8px;
+      }
+      .audio__volume {
+        position: absolute;
+        top: -80px;
+        left: -55px;
+        transform: rotate(-90deg);
+      }
+    }
+    .audio__play {
+      margin-right: 12px;
+      width: 14px;
+      height: 16px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .audio__download {
+      display: flex;
+      align-items: center;
+    }
+    .audio__duration {
+      border-radius: 2px;
+      height: 7px;
+      width: 500px;
+      // .article__spend {
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   display: inline-block;
+      //   width: 20px;
+      //   height: 100%;
+      //   border-radius: 2px;
+      //   background-color: #222222;
+      // }
+    }
+    @media (max-width: 768px) {
+      .audio__duration {
+        width: 300px;
+      }
+      .audio__download {
+        display: none;
+      }
+    }
+    @media (max-width: 500px) {
+      .audio__duration {
+        width: 150px;
+      }
+      .audio__download {
+        display: none;
+      }
+    }
+    .audio__duration::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 8px;
+      cursor: pointer;
+      background-color: #f5f5f7; /* Колір треку повзунка */
+      border-radius: 5px;
+      border: 1px solid #000;
+    }
+
+    .audio__duration::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      background: #222222; /* Колір ручки повзунка */
+      cursor: pointer;
+      margin-top: -4px; /* Вирівнювання ручки по центру треку */
+    }
+  }
+}

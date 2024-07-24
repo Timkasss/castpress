@@ -1,5 +1,9 @@
 .posts {
   padding-top: 64px;
+  padding-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   &__title {
     padding-bottom: 25px;
   }
@@ -20,5 +24,10 @@
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     margin-left: 5px;
+  }
+}
+@media (max-width: 768px) {
+  .posts {
+    padding-bottom: 48px;
   }
 }

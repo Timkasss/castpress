@@ -5,15 +5,16 @@ import { oswald } from "../../ui/fonts";
 import styles from "./styles.module.scss";
 
 import { FaRegHeart, FaSearch } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Header() {
   const [openBurger, setOpenBurger] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <header className={styles.header}>
-      <h1 className={`${oswald.className} ${styles.header__logo}`}>
-        <a href="#">CastPress.</a>
-      </h1>
+      <div className={`${oswald.className} ${styles.header__logo}`}>
+        <Link href={"/"}>CastPress.</Link>
+      </div>
 
       <nav className={styles.headerMenu}>
         <div

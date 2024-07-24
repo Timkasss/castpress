@@ -1,22 +1,17 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-import { FaPlayCircle, FaPlay, FaPause } from "react-icons/fa";
+import { FaPlay, FaPause } from "react-icons/fa";
 import { IoVolumeMedium } from "react-icons/io5";
 import { IoMdDownload } from "react-icons/io";
 
 import styles from "./styles.module.scss";
 
-interface numberType {
-  number: number;
-}
-
-const Player: React.FC<numberType> = ({ number }) => {
+const Player = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [plaing, setPlay] = useState<boolean>(false);
-  const [openMusic, setOpenMusic] = useState<boolean>(false);
   const [volume, setVolume] = useState(1.0);
   const [hoverVolume, setHoverVolume] = useState(false);
   useEffect(() => {
@@ -35,7 +30,6 @@ const Player: React.FC<numberType> = ({ number }) => {
   }, []);
   function play() {
     setPlay(true);
-    setOpenMusic(true);
     audioRef.current?.play();
   }
   function pause() {
@@ -72,20 +66,20 @@ const Player: React.FC<numberType> = ({ number }) => {
   };
 
   return (
-    <div className={styles.article__audioWrapper}>
+    <div className={styles.audio}>
       <audio
         ref={audioRef}
         controls
         preload="none"
         src="/audio23.m4a"
-        className={styles.article__audio}
+        className={styles.audio__audio}
       ></audio>
 
-      <div className={styles.article__audioPlaing}>
+      <div className={styles.audio__audioPlaing}>
         {plaing ? (
-          <FaPause className={styles.article__play} onClick={pause} />
+          <FaPause className={styles.audio__play} onClick={pause} />
         ) : (
-          <FaPlay className={styles.article__play} onClick={play} />
+          <FaPlay className={styles.audio__play} onClick={play} />
         )}
         <span>{formatTime(currentTime)}</span>
         <input
@@ -95,15 +89,15 @@ const Player: React.FC<numberType> = ({ number }) => {
           step="0.01"
           value={currentTime}
           onChange={handleSeek}
-          className={styles.article__duration}
+          className={styles.audio__duration}
         />
         {/* <div className={styles.article__duration}>
               <span className={styles.article__spend}></span>
             </div> */}
         <span>{formatTime(duration)}</span>
-        <div className={styles.article__volumeWrapper}>
+        <div className={styles.audio__volumeWrapper}>
           <IoVolumeMedium
-            className={styles.article__volumeIcon}
+            className={styles.audio__volumeIcon}
             onMouseEnter={() => setHoverVolume(true)}
             onMouseDown={() => setHoverVolume(false)}
           />
@@ -115,11 +109,11 @@ const Player: React.FC<numberType> = ({ number }) => {
               step="0.01"
               value={volume}
               onChange={handleVolumeChange}
-              className={styles.article__volume}
+              className={styles.audio__volume}
             />
           )}
         </div>
-        <a href="/audio23.m4a" download className={styles.article__download}>
+        <a href="/audio23.m4a" download className={styles.audio__download}>
           <IoMdDownload />
         </a>
       </div>

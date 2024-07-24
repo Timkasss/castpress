@@ -1,0 +1,13 @@
+.comments {
+  padding-top: 67px;
+  border-top: 1px solid #eaeaee;
+  &__title {
+    font-size: 16px;
+    color: #222222;
+    font-weight: 400;
+    line-height: 25px;
+  }
+  &__reply {
+    padding-left: 74px;
+  }
+}

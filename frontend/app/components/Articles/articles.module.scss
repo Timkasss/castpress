@@ -4,3 +4,9 @@
   flex-direction: column;
   gap: 70px;
 }
+@media (max-width: 768px) {
+  .articles {
+    padding-top: 64px;
+    gap: 48px;
+  }
+}

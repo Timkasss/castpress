@@ -1,10 +1,14 @@
+"use client";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 
 import { FaSpotify, FaApple, FaPlay } from "react-icons/fa";
 import { PiSoundcloudLogoFill } from "react-icons/pi";
+import { useState } from "react";
+import Player from "@/app/ui/Player";
 
 export default function Front() {
+  const [play, setPlay] = useState<boolean>(false);
   return (
     <article className={styles.front}>
       <h2 className={styles.front__title}>
@@ -17,10 +21,21 @@ export default function Front() {
         alt="girl"
         className={styles.front__image}
       />
-      <a href="#" className={styles.front__link}>
-        <FaPlay />
-        Episode Page
-      </a>
+      {play ? (
+        <div className={styles.player}>
+          <Player />
+        </div>
+      ) : (
+        <a
+          href="#"
+          className={styles.front__link}
+          onClick={() => setPlay(true)}
+        >
+          <FaPlay />
+          Episode Page
+        </a>
+      )}
+
       <footer className={styles.front__footer}>
         <h2 className={styles.front__titleSocials}>Listen on</h2>
         <div className={styles.front__socials}>
