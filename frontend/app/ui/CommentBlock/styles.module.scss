@@ -26,6 +26,11 @@
     color: #555555;
     padding-right: 16px;
   }
+  @media (max-width: 768px) {
+    &__fullname {
+      display: block;
+    }
+  }
   &__time {
     font-size: 14px;
     font-weight: 400;

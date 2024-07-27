@@ -1,0 +1,42 @@
+.privacyPolicy {
+  padding-top: 200px;
+  max-width: 670px;
+  &__title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #222222;
+    line-height: 32px;
+  }
+  &__list {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  p {
+    font-size: 16px;
+    color: #555555;
+    font-weight: 400;
+    line-height: 25px;
+  }
+  h3 {
+    font-size: 21px;
+    color: #222222;
+    font-weight: 600;
+    line-height: 25px;
+    padding-top: 40px;
+    padding-bottom: 24px;
+  }
+  li {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555555;
+    line-height: 25px;
+  }
+  li:first-child {
+    padding-bottom: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .privacyPolicy {
+    padding-top: 148px;
+  }
+}

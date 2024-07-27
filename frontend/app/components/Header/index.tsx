@@ -25,9 +25,10 @@ export default function Header() {
           <ul className={styles.headerMenu__list}>
             <li
               className={styles.headerMenu__item}
-              onClick={() => setOpenMenu(!openMenu)}
+              onMouseEnter={() => setOpenMenu(true)}
+              onMouseLeave={() => setOpenMenu(false)}
             >
-              Episodes
+              <Link href={"/episodes"}>Episodes</Link>
               <span
                 className={`${styles.headerMenu__arrow} ${
                   openMenu ? styles.headerMenu__arrow_rotate_down : ""
@@ -41,36 +42,36 @@ export default function Header() {
               >
                 <li className={styles.headerMenu__nestedItem}>
                   <a href="#" className={styles.headerMenu__nestedLink}>
-                    One
+                    Season 1
                   </a>
                 </li>
                 <li className={styles.headerMenu__nestedItem}>
                   <a href="#" className={styles.headerMenu__nestedLink}>
-                    Two
+                    Season 2
                   </a>
                 </li>
                 <li className={styles.headerMenu__nestedItem}>
                   <a href="#" className={styles.headerMenu__nestedLink}>
-                    Three
+                    Season 3
                   </a>
                 </li>
               </ul>
             </li>
             <li className={styles.headerMenu__item}>
-              <a className={styles.headerMenu__link} href="#">
+              <Link className={styles.headerMenu__link} href={"/blog"}>
                 Blog
-              </a>
+              </Link>
             </li>
             <li className={styles.headerMenu__item}>
-              <a className={styles.headerMenu__link} href="#">
+              <Link className={styles.headerMenu__link} href={"/contact"}>
                 Contact
-              </a>
+              </Link>
             </li>
             <li className={styles.headerMenu__item}>
-              <a className={styles.headerMenu__link} href="#">
+              <Link className={styles.headerMenu__link} href={"/donate"}>
                 <FaRegHeart />
                 Donate
-              </a>
+              </Link>
             </li>
           </ul>
           <div

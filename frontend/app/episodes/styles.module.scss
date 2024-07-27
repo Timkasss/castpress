@@ -1,0 +1,11 @@
+.container {
+  padding-top: 96px;
+  padding-bottom: 64px;
+  max-width: 670px;
+  border-bottom: 1px solid #eaeaee;
+}
+@media (max-width: 768px) {
+  .container {
+    padding-bottom: 48px;
+  }
+}

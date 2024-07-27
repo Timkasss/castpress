@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 
@@ -9,7 +10,9 @@ import Player from "../ui/Player";
 import RelatedPosts from "../components/RelatedPosts";
 import Comment from "../components/Comment";
 import Comments from "../components/Comments";
+import { useState } from "react";
 export default function Page() {
+  const [tranScript, settranScript] = useState(false);
   return (
     <article className={styles.front}>
       <h2 className={styles.front__title}>
@@ -65,10 +68,57 @@ export default function Page() {
           himenaeos. Aliquam a luctus magna, a finibus massa.
         </p>
         <footer>
-          <div className={styles.front__typeScript}>
-            Listening time: <span>86</span> minutes | View transcript
+          <div
+            className={styles.front__tranScript}
+            onClick={() => settranScript(!tranScript)}
+          >
+            Listening time: 86 minutes | View transcript
             <GoArrowRight className={styles.front__arrow} />
           </div>
+          {tranScript && (
+            <div className={styles.tranScript__container}>
+              <div className={styles.tranScript}>
+                <p>
+                  Per Axbom <br />
+                  Hello, I’m Per Axbom.
+                </p>
+                <p>
+                  James Royal-Lawson <br />
+                  And I’m James Royal-Lawson.
+                </p>
+                <p>
+                  Per Axbom
+                  <br />
+                  Vivamus et aliquet neque. Mauris feugiat blandit augue a
+                  vestibulum. Class aptent taciti sociosqu ad litora torquent
+                  per conubia nostra, per inceptos himenaeos. Aliquam a luctus
+                  magna, a finibus massa.
+                </p>
+                <p>
+                  Proin ultricies, arcu ac dignissim sollicitudin, nibh nibh
+                  fermentum eros, Cras non interdum ligula, sit amet imperdiet
+                  purus. Vestibulum quis leo nibh.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Similique nostrum ducimus error? Sed nobis magnam deserunt
+                  expedita. Harum temporibus deleniti dignissimos commodi saepe
+                  quisquam quas ab tenetur doloribus quis, modi animi
+                  consequatur deserunt excepturi illo expedita minima non
+                  doloremque perspiciatis id neque necessitatibus dolorum alias!
+                  Ipsum doloremque inventore nobis? Dolore veritatis, tenetur
+                  natus facilis aut esse blanditiis fuga, necessitatibus quo
+                  reprehenderit magni, deserunt neque perspiciatis tempora?
+                  Architecto asperiores tempora iusto optio laudantium
+                  laboriosam ad, pariatur explicabo aliquid libero nemo
+                  voluptate cupiditate saepe dolor consequatur blanditiis
+                  delectus dolorum? Nostrum cum enim magni, at velit, atque, et
+                  deserunt cupiditate ut error facere.
+                </p>
+              </div>
+            </div>
+          )}
+
           <div className={styles.front__tags}>
             <span>#Apple</span>
             <span>#Keynote</span>

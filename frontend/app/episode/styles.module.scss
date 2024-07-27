@@ -47,7 +47,7 @@
     text-align: left;
     color: #555555;
   }
-  &__typeScript {
+  &__tranScript {
     border: 1px solid #eaeaee;
     padding: 24px;
     font-size: 21px;
@@ -59,11 +59,52 @@
     gap: 10px;
     cursor: pointer;
     margin-top: 48px;
-    margin-bottom: 48px;
+
+    user-select: none;
+  }
+  .tranScript__container {
+    border: 1px solid #eaeaee;
+  }
+  .tranScript {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555555;
+    line-height: 25px;
+    margin: 24px;
+    height: 350px;
+    overflow: auto;
+  }
+  @media (max-width: 768px) {
+    .tranScript {
+      margin: 24px 16px 16px 16px;
+    }
+  }
+  /* Общие стили для полосы прокрутки */
+  .tranScript::-webkit-scrollbar {
+    width: 6px; /* Ширина полосы прокрутки */
+  }
+
+  /* Стиль полосы прокрутки */
+  .tranScript::-webkit-scrollbar-thumb {
+    background-color: #979797; /* Цвет полосы прокрутки */
+    border-radius: 5px; /* Скругление углов */
+  }
+
+  /* Стиль трека (фона) полосы прокрутки */
+  .tranScript::-webkit-scrollbar-track {
+    background-color: #eaeaee; /* Цвет фона полосы прокрутки */
+  }
+
+  .tranScript p:first-child {
+    padding-bottom: 20px;
+  }
+  .tranScript p:nth-child(2) {
+    padding-bottom: 20px;
   }
   &__arrow {
     color: #7247ca;
     width: 20px;
+    flex-shrink: 0;
   }
   &__tags {
     display: flex;
@@ -74,6 +115,7 @@
     line-height: 25px;
     padding-bottom: 24px;
     border-bottom: 1px solid #eaeaee;
+    margin-top: 48px;
   }
   &__social {
     display: flex;

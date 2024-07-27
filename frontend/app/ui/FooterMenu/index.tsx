@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./styles.module.scss";
 
 export default function FooterMenu() {
@@ -5,16 +6,19 @@ export default function FooterMenu() {
     <nav className={styles.footerMenu}>
       <ul className={styles.footerMenu__list}>
         <li className={styles.footerMenu__item}>
-          <a href="#">Episodes</a>
+          <Link href={"/episodes"}>Episodes</Link>
         </li>
         <li className={styles.footerMenu__item}>
-          <a href="#">Blog</a>
+          <Link href={"/blog"}>Blog</Link>
         </li>
         <li className={styles.footerMenu__item}>
-          <a href="#">Contact</a>
+          <Link href={"/contact"}>Contact</Link>
+        </li>
+        <li>
+          <Link href={"/about"}>About</Link>
         </li>
         <li className={styles.footerMenu__item}>
-          <a href="#">Donate</a>
+          <Link href={"/donate"}>Donate</Link>
         </li>
       </ul>
     </nav>

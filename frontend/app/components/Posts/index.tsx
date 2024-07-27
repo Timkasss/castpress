@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 
 import clock from "@/public/clock.jpg";
 import headphones from "@/public/headphones.jpg";
+import Link from "next/link";
 
 export default function Posts() {
   const data = [
@@ -28,9 +29,9 @@ export default function Posts() {
         <Post data={data[0]} />
         <Post data={data[1]} />
       </div>
-      <a href="#" className={styles.posts__link}>
+      <Link href={"/blog"} className={styles.posts__link}>
         View Blog
-      </a>
+      </Link>
     </section>
   );
 }

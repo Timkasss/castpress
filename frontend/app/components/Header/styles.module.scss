@@ -21,29 +21,45 @@
     font-size: 12px;
     font-weight: 600;
     margin-right: 39px;
-    text-transform: uppercase;
     display: flex;
     flex: 1 1 auto;
     justify-content: flex-end;
-
+    text-transform: uppercase;
     .headerMenu__list {
       display: flex;
+      font-size: 14px;
+      color: #222222;
+      font-weight: 600;
+      line-height: 18px;
       gap: 39px;
       .headerMenu__item:first-child {
         color: #222222;
         cursor: pointer;
         .headerMenu__nestedList {
-          position: absolute;
-          background-color: #fff;
           width: 75px;
           margin-top: 5px;
           height: 0;
           opacity: 0;
           overflow: hidden;
           transition: height 0.5s linear 100ms, opacity 0.5s linear 100ms;
+          a {
+            display: flex;
+            justify-content: center;
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 600;
+            text-transform: capitalize;
+            color: #979797;
+            padding-bottom: 16px;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
         }
         .headerMenu__nestedList_open {
-          height: auto;
+          // height: 80px;
+          // margin-bottom: 30px;
+          //padding-top: 24px;
           overflow: visible;
           opacity: 1;
         }
@@ -101,9 +117,9 @@
         position: fixed;
         left: 0;
         top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #f1f1f1;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(229, 229, 229);
         display: block;
         animation: showmenu 0.5s;
         .headerMenu__list {
@@ -114,9 +130,18 @@
           display: flex;
           .headerMenu__item:first-child {
             .headerMenu__nestedList {
-              position: absolute;
-              background-color: #fff;
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              text-align: center;
               width: 110px;
+            }
+            .headerMenu__nestedList_open {
+              height: 80px;
+              margin-bottom: 50px;
+              padding-top: 20px;
+              overflow: visible;
+              opacity: 1;
             }
           }
 
@@ -161,6 +186,15 @@
           }
         }
       }
+      // .headerMenu__burgerWrapper_open::after {
+      //   content: "";
+      //   position: fixed;
+      //   top: 0;
+      //   left: 0;
+      //   width: 100vw;
+      //   height: 100vh;
+      //   background-color: #f1f1f1;
+      // }
       @keyframes showmenu {
         from {
           left: -100%;

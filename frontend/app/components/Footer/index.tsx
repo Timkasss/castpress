@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import NewsForm from "@/app/ui/NewsForm";
 import { FaTelegram, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import Link from "next/link";
 export default function Footer() {
   return (
     <div className={styles.wrapper}>
@@ -13,7 +14,10 @@ export default function Footer() {
         </div>
         <footer className={styles.footer__footer}>
           <p className={styles.footer__text}>
-            PodcastTheme by VitaThemes | Privacy policy{" "}
+            PodcastTheme by VitaThemes |
+            <Link href={"/privecy-policy"} className={styles.footer__privacy}>
+              Privacy policy
+            </Link>
           </p>
           <div className={styles.footer__social}>
             <a href="#">

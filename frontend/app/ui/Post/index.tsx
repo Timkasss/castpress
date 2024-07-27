@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import styles from "./styles.module.scss";
+import Link from "next/link";
 
 interface PostProps {
   title: string;
@@ -16,9 +17,9 @@ export default function Post({ data }: { data: PostProps }) {
         <time dateTime="2024-02-14 20:00" className={styles.post__time}>
           {data.date}
         </time>
-        <a href="#" className={styles.post__link}>
+        <Link href={"/blog-single"} className={styles.post__link}>
           Read More
-        </a>
+        </Link>
       </div>
       <div className={styles.post__imageWrapper}>
         <Image
