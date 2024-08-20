@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./styles.module.scss";
 import { IoIosArrowForward } from "react-icons/io";
-export default function () {
+export default function Page() {
   return (
     <article className={styles.donate}>
       <h2 className={styles.donate__title}>Support CastPress</h2>
